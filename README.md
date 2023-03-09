@@ -1,1 +1,2 @@
-这个就当做上科大CS240的仓库吧# CS240
+# CS240
+2023-Spring Algorithm class in ShanghaiTech
