@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{amsmath,graphicx}
+%\usepackage{cite}
+\usepackage{amsthm,amssymb,amsfonts}
+\usepackage{textcomp}
+\usepackage{bm,enumerate}
+\usepackage{algorithm}    
+\usepackage{algorithmic}
+%\usepackage{booktabs}
+
+\begin{document}
+
+\title{Machine Learning, Spring 2023\\Homework 4}
+\date{Due on 23:59 April 27, 2023\\}
+\maketitle
+
+
+
+
+\section{Understanding VC dimension ($50$ points)}
+In this part, you need to complete some mathematical proofs about VC dimension. Suppose the hypothesis set
+\begin{equation*}
+\mathcal{H} = \{f(x, \alpha) = \mathrm{sign} \ ( \mathrm{sin}(\alpha x))|, \alpha \in \Re \}
+\end{equation*}
+where $x$ and $f$ are feature and label, respectively.
+\begin{itemize}
+    \item Show that $\mathcal{H}$ cannot shatter the points $x_1 = 1, x_2 = 2, x_3 = 3, x_4 = 4$. ($20$ points) \\
+    
+    (Key: Mathematically, you need to show that there exists $y_1, y_2, y_3, y_4$, for any $\alpha \in \Re$, $f(x_i) \neq y_i, i = 1,2,3,4$, for example, $+1, +1, -1, +1$)\\
+	\item Show that the VC dimension of $\mathcal{H}$ is $\infty$. (Note the difference between it and the first question) ($30$ points) \\
+	
+    (Key: Mathematically, you have to prove that for any label sets ${y_1 , \cdots , y_m}, m \in \mathbb{N} $, there exists $\alpha \in \Re$ and $x_i, i = 1,2,\cdots,m$
+	such that $f(x; \alpha)$ can generate this set of labels. Consider the points $x_i = 10^{-i}$...)
+\end{itemize} 
+
+
+
+\section{Bias-variance decomposition ($50$ points)}
+\label{problem1}
+When there is noise in the data, $E_{out}(g^{(\mathcal{D})}) = \mathbb{E}_{\mathbf{x},y} \left[ (g^{(\mathcal{D})}(\mathbf{x}) - y(\mathbf{x}))^2\right]$, where $y(\mathbf{x}) = f(\mathbf{x}) + \epsilon$. If $\epsilon$ is a zero-mean noise random variable with variance $\sigma^2$, show that the bias-variance decomposition becomes 
+\begin{equation*}
+    \mathbb{E}_{\mathcal{D}}\left[ E_{out}(g^{(\mathcal{D})})\right] = \sigma^2 + \text{bias} + \text{var}
+\end{equation*}
+\end{document}
