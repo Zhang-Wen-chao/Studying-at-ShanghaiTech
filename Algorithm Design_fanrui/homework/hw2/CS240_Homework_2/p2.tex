@@ -1,0 +1,9 @@
+\problem{}
+Suppose you have a single machine on which you want to schedule a set of jobs for $n$ customers.  You want to find a schedule to finish all the jobs which will make the customers the happiest.  Let $t_i$ denote the length of customer $i$'s job, and let $C_i$ be the job's finishing time in the schedule.  For example, if jobs $i$ and $j$ are the first and second jobs in the schedule, then $C_i = t_i$, and $C_j = t_i + t_j$.  Each customer $i$ also has a weight $w_i$ representing her job's importance, and her happiness is determined by both her job's importance and its finishing time.  Specifically, you want to order the jobs to minimize the weighted sums of the jobs' completion times, defined as $\sum_{i=1}^n w_i C_i$.  Design an efficient algorithm for this task, and prove that your algorithm is correct.
+
+As an example, suppose there are two jobs, with $t_1 = 1$ and $w_1 = 100$, and $t_2 = 5$ and $w_2 = 4$.  Doing the jobs in the order 1, 2 yields a weighted completion time of $100\times1+4\times(1+5)=124$, while doing them in the order 2, 1 gives a weight completion time of $100\times(1+5)+4\times5=620$. Thus, your algorithm should output the ordering 1, 2.
+
+\solution{
+
+}
+\newpage
