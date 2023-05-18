@@ -1,0 +1,38 @@
+\problem{}
+Given a set of items, where the $i$'th item has size $c_i$ ($c_i > 0$), we want to place them in as few bins as possible.  Each bin has a capacity $V$, where $V \geq \max_i c_i$.  To try to minimize the number of bins used, we take the following steps.  We start with one active bin, then iterate through the items one by one and try to place the item into any active bin which can accommodate it.  If an item cannot fit into any active bin, we open a new active bin. The algorithm is shown below.  Prove that this algorithm is a 2-approximation, i.e. the number of bins it uses is at most twice the minimum possible number of bins required.
+
+\textbf{Algorithm:}
+
+\begin{algorithm}[H]
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+
+\Input{Set of items with sizes $c_1, c_2, \ldots, c_n$}
+\Output{Number of bins used}
+
+Sort the items in non-decreasing order of their sizes: $c_1 \leq c_2 \leq \ldots \leq c_n$
+
+\For{$i \leftarrow 1$ \KwTo $n$}{
+\For{$j \leftarrow 1$ \KwTo $k$}{
+\If{item $i$ fits into active bin $j$}{
+place item $i$ in bin $j$
+
+break
+}
+}
+\Else{
+%\If{Garbage piece $i$ does not fit into any active garbage bin}{
+open a new active bin $k+1$
+
+$k \gets k+1$
+
+place item $i$ in bin $k+1$;
+}
+}
+\Return{number of active bins $k$}
+\end{algorithm}
+
+
+\solution{}
+ 
+\newpage

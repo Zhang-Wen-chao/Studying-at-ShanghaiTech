@@ -1,6 +1,8 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <sstream>
+#include <cmath>
 using namespace std;
 
 class Solution {
@@ -32,26 +34,59 @@ public:
         return dp[i][j];
     }
 };
+vector<vector<int>> parseInput(string input) {
+    vector<int> numbers;
+    stringstream ss(input);
+    string num;
 
+    // Remove all spaces and square brackets from the input
+    input.erase(remove(input.begin(), input.end(), ' '), input.end());
+    input.erase(remove(input.begin(), input.end(), '['), input.end());
+    input.erase(remove(input.begin(), input.end(), ']'), input.end());
 
-int main() {
-    int n;
-    cin >> n; // Read the size of the matrix
-    vector<vector<int>> matrix(n, vector<int>(n));
-    
-    // Read the matrix
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            cin >> matrix[i][j];
+    ss = stringstream(input); // Reset stringstream with the cleaned input
+
+    // Read each number in the input
+    while (getline(ss, num, ',')) {
+        try {
+            numbers.push_back(stoi(num));
+        } catch (const invalid_argument& e) {
+            cout << "Invalid matrix: Element is not a valid integer." << endl;
+            return {};
         }
     }
+
+    // Check if the number of elements is a perfect square
+    int numCount = numbers.size();
+    int sqrtNumCount = sqrt(numCount);
+    if (sqrtNumCount * sqrtNumCount != numCount) {
+        cout << "Invalid matrix: Number of elements is not a perfect square." << endl;
+        return {};
+    }
+
+    // Rearrange the numbers into an n x n matrix
+    int n = sqrtNumCount;
+    vector<vector<int>> matrix(n, vector<int>(n));
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
+            matrix[i][j] = numbers[i * n + j];
+        }
+    }
+
+    return matrix;
+}
+
+int main() {
+    string input;
+    getline(cin, input);
+    vector<vector<int>> matrix = parseInput(input);
     
     // Solve the problem
     Solution solution;
     int longestPathLength = solution.longestIncreasingPath(matrix);
-    
-    // Output the result
+
+    // // Output the result
     cout << longestPathLength << endl;
-    
+
     return 0;
 }
