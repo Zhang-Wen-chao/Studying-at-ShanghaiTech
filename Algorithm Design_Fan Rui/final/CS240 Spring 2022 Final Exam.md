@@ -104,9 +104,6 @@ Now, we can use the master theorem to determine the asymptotic complexity of $T(
 $$\log_b a = \log_{\frac{10}{9}} 2 \approx 3.17$$
 
 Since $f(n)=O(n)$, we can apply case 1 of the master theorem, which gives us a complexity of $T(n) = \Theta(n^{\log_b a}) = \Theta(n^{3.17})$. Therefore, we cannot conclude that $T(n)=O(n)$.
-
-
-
 # 2
 (10 points)
 
@@ -150,8 +147,6 @@ output: the maximum sum of any increasing subsequence in the input sequence
 ```
 
 The time complexity of this algorithm is $O(n^2)$, since we need to compute $S_i$ using a nested loop over $j$. However, it is possible to optimize this algorithm using binary search, which reduces the time complexity to $O(n \log n)$. The idea is to maintain a list of increasing subsequence endings and use binary search to find the largest one that can be extended by the current number. This approach will require sorting the sequence and maintaining additional arrays, so it is more complicated than the basic dynamic programming approach.
-
-
 # 3
 You and a group of friends have borrowed money from each other, and now it’s time
 
@@ -172,49 +167,50 @@ an efficient algorithm to minimize the total amount of money transferred, argue 
 your algorithm is correct, and analyze the complexity of your algorithm.
 
 (10 points)
-
 ## maxflow
-This problem can be modeled as a minimum-cost flow problem, where each person is a node, and each debt between two people is an edge with a weight equal to the amount owed. We can assume each person starts with a balance of 0.
+This problem can be seen as a Minimum Cost Flow problem, where each node represents a person and an edge $(u,v)$ with weight $w$ represents the amount of money that $u$ owes to $v$. The goal is to transfer the money such that everyone gets their due while minimizing the total amount transferred.
 
-To solve this problem, we can use the Edmonds-Karp algorithm, which is a variant of the Ford-Fulkerson algorithm, to find the maximum flow in a network with a minimum cost. In this case, the maximum flow we want to find is the total amount owed, and the minimum cost is the minimum amount of money transferred.
+One approach to solve this problem is to use the Ford-Fulkerson algorithm with the Edmonds-Karp implementation to find the maximum flow in the equivalent flow network. Here, we will first transform the given weighted directed graph into an equivalent flow network.
 
-First, we need to construct a directed graph with a source node s and a sink node t. For each person, we add a node to the graph with an edge from s to that person's node with a capacity equal to the total amount that person owes. We also add an edge from each person's node to t with a capacity equal to the total amount that person is owed.
+To do this, we will create a source node $s$ and a sink node $t$, and connect them to each person node $p_i$ with edges $(s,p_i)$ and $(p_i,t)$ respectively. The capacity of $(s,p_i)$ will be equal to the total money owed by $p_i$, and the capacity of $(p_i,t)$ will be equal to the total money owed to $p_i$. Finally, the capacity of edge $(p_i,p_j)$ will be set as the amount that $p_i$ owes to $p_j$.
 
-For each debt between two people, we add an edge from the node corresponding to the person who owes money to the node corresponding to the person who is owed money with a capacity equal to the amount owed and a cost equal to the negative of the amount owed. This represents the transfer of money from the person who owes to the person who is owed. 
+Applying the Ford-Fulkerson algorithm on this flow network will give us the maximum flow, which corresponds to the minimum cost required to transfer the money. We can then find the minimum cut in the residual graph obtained after running the Ford-Fulkerson algorithm, which will tell us which nodes belong to the source side and which nodes belong to the sink side.
 
-Now, we can run the Edmonds-Karp algorithm on this graph to find the maximum flow from s to t with a minimum cost. The flow network gives us a solution to the problem: each edge $(u,v)$ with a positive flow corresponds to a transfer of money from $u$ to $v$ equal to the amount of flow on the edge.
+The minimum cut will contain only the edges that are saturated in the maximum flow, and the sum of their capacities will be the minimum cost required to transfer the money. We can then transfer the money along these edges from the source side to the sink side to get an optimal solution.
 
-The total amount transferred is equal to the total cost of the flow, which is negative because we set the costs of the edges to be the negative of the amount owed. Therefore, we need to multiply the total cost by -1 to get the actual amount transferred.
+The time complexity of the Ford-Fulkerson algorithm with Edmonds-Karp implementation is $O(V^2E)$, where $V$ is the number of nodes and $E$ is the number of edges in the flow network. In our case, we have $2n+2$ nodes and $n(n-1)$ edges (assuming each person owes money to all other people), giving us a time complexity of $O(n^4)$. However, the actual number of edges will be much less than $n^2$, as most people will owe money to only a few others. Therefore, the average-case time complexity will be much lower.
 
-The time complexity of the Edmonds-Karp algorithm is O(VE^2), where V and E are the number of nodes and edges in the graph, respectively. In this case, V is equal to the number of people, and E is equal to the number of debts. Therefore, the time complexity of our algorithm is O(N^2M^2), where N is the number of people and M is the number of debts. However, there are more efficient algorithms for solving the minimum-cost flow problem, such as the network simplex algorithm and the successive shortest path algorithm, which can reduce the time complexity to O(NMlogN) and O(NM^2logN), respectively.
+In conclusion, the above approach using the Ford-Fulkerson algorithm can solve the given problem efficiently.
 
 # 4
-Suppose you are given an array of ꢖ numbers and want to find the ꢫ’th largest
+Suppose you are given an array of $n$ numbers and want to find the k’th largest
 
-number, for some ꢤ ꢒ ꢫ ꢒ ꢖ. There are deterministic algorithms to solve this
+number, for some $1\le k\le n$. There are deterministic algorithms to solve this
 
-problem in ꢠꢆꢖꢊ time, but they are somewhat complicated. Design a simple
+problem in $O(n)$ time, but they are somewhat complicated. Design a simple
 
-randomized algorithm to solve this problem in ꢠꢆꢖꢊ expected time. Clearly
+randomized algorithm to solve this problem in $O(n)$ expected time. Clearly
 
 describe the algorithm and analyze its expected time complexity.
 
 Hint: Use an approach similar to randomized Quicksort.
 
 (10 points)
+## randomized Quicksort
+Yes, we can use the randomized Quickselect algorithm to find the $k$-th largest number in an unsorted array of size $n$. The algorithm works in a similar way to the randomized Quicksort algorithm and has an expected time complexity of $O(n)$.
 
-solution4:The algorithm that you are looking for is called randomized selection. It is very similar to randomized quicksort, as you mentioned, and it can find the th smallest element in an unsorted array of n elements in expected O(n) time.
+The basic idea is to randomly select a pivot element from the array and partition the array around the pivot. If the pivot element is the $k$-th largest element, we are done. If the pivot element is larger than the $k$-th largest element, we can discard the elements on the right side of the pivot and repeat the process on the left side of the pivot. If the pivot element is smaller than the $k$-th largest element, we can discard the elements on the left side of the pivot and repeat the process on the right side of the pivot.
 
-The basic idea of the algorithm is to select a pivot element at random, partition the array around the pivot, and then recursively apply the algorithm to one of the partitions until the desired element is found.
+Here are the steps to perform the Randomized Quickselect:
 
-Here's how the algorithm works:
+ 1. Choose a random pivot element from the array.
+ 2. Partition the array into two parts: one part containing elements greater than or equal to the pivot, and another part containing elements smaller than the pivot.
+ 3. If the number of elements in the first part is greater than or equal to k, then recursively apply the algorithm to this part.
+ 4. If the number of elements in the first part is less than k, then recursively apply the algorithm to the second part with k updated as k minus the number of elements in the first part.
 
-1.Choose a pivot element from the array uniformly at random.
-2.Partition the array into two subarrays: one containing all elements smaller than the pivot, and another containing all elements greater than or equal to the pivot.
-3.If the index of the pivot element in the sorted array is k (i.e., we are looking for the kth largest element), then we either return the pivot element if k equals its index, or apply the algorithm recursively to the appropriate subarray otherwise.
-The expected running time of this algorithm is O(n), because at each step we reduce the size of the problem by roughly half (on average), just like in randomized quicksort. The worst-case running time is still O(n^2), but this occurs with very low probability.
+The expected running time of this algorithm is $O(n)$ because at each iteration, the size of the array that needs to be processed reduces by a constant factor. Since the pivot is chosen randomly, there is a good chance that the algorithm will choose a pivot close to the median, leading to a good partitioning of the array.
 
-Note that the constant factors in the O(n) expected running time may be larger than those in deterministic algorithms, but randomized selection is much simpler to implement and has better asymptotic behavior.
+Therefore, the expected running time of the Randomized Quickselect algorithm to find the k-th largest element in an array of size n is O(n).
 
 # 5
 Recall from class that we found a 2-approximation algorithm for the ꢫ-center problem.
