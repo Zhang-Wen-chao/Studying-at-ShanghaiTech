@@ -107,7 +107,11 @@ A friend comes to you with a learning problem. She says the target function  $f$
 Given target function $ f(x) = ax $ ($a$ unknown), now we have the dataset $\{x_1,y_1\}$ ... $\{x_n,y_n\}$. Which hypothesis class will you chose, $ H = \{ax + b\} $ or $H = \{ax\} $, explain your reason.
 
 
+Given that your target function is $f(x) = ax$, the hypothesis class that directly aligns with this is $H = \{ax\}$. This is because the target function and this hypothesis class both represent linear functions that pass through the origin, with 'a' being the slope or rate of change.
 
+Choosing the $H = \{ax + b\}$ hypothesis class, where 'b' represents the y-intercept, would introduce an additional degree of freedom that is not present in the target function. In the context of machine learning, this could potentially lead to overfitting the data, as it adds an additional parameter that needs to be estimated but is not part of the original target function. 
+
+However, there might be circumstances where you would choose $H = \{ax + b\}$ over $H = \{ax\}$. For example, if you have reason to believe that the target function is incorrect, or incomplete, or if there's evidence in your dataset that a non-zero intercept would provide a better fit, then $H = \{ax + b\}$ might be a better choice. But without such specific circumstances or additional information, $H = \{ax\}$ would generally be the more appropriate choice for your given target function.
 
 
 \end{document}
