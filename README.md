@@ -1,4 +1,9 @@
 # The-Journey-of-Studying-at-ShanghaiTech
+![GitHub stars](https://img.shields.io/github/stars/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech?style=flat)
+![GitHub forks](https://img.shields.io/github/forks/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech?style=flat)
+![GitHub issues](https://img.shields.io/github/issues/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech)
 ## some courses in ShanghaiTech
 等考完试，一定要在github删除课件，因为老师没说允许传播。
 
