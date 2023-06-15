@@ -1,4 +1,4 @@
-# The-Journey-of-Studying-at-ShanghaiTech
+# Studying-at-ShanghaiTech
 ![GitHub stars](https://img.shields.io/github/stars/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech?style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech?style=flat)
 ![GitHub issues](https://img.shields.io/github/issues/Zhang-Wen-chao/The-Journey-of-Studying-at-ShanghaiTech)
