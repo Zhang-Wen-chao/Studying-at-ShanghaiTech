@@ -11,5 +11,4 @@ rehearsal很重要、format要有一致性、page number、reference要清楚、
 
 PPT不全屏放映，alt+d，v，点击放映。
 腾讯会议共享ppt使用演讲者模式：首先开启演讲者模式，然后再共享屏幕，共享屏幕选择ppt，然后再切到演讲者模式界面即可
-
 ## 秋学期选什么课程呢？和wangshuo商量一下
