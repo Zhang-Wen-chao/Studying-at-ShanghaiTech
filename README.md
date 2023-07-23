@@ -21,14 +21,17 @@ All things I can share are in this folder of baidunetdisk.
 ### Deep Learning_Xu Lan
 链接：https://pan.baidu.com/s/1tQuwV38BBNwesjuVrKMBLw?pwd=nhtq 
 提取码：nhtq 
-### Digital circuits
-我还是没学会。
 ### Digital Image Processing_Cai Xiran
 链接：https://pan.baidu.com/s/1JnU4fPIrNYHvONsj-JjcWw?pwd=h2dy 
 提取码：h2dy 
 ### Meachine Learning_Wang Hao
 链接：https://pan.baidu.com/s/1zG5MG5LR9t9ZuuLGGYHhJg?pwd=c83z 
 提取码：c83z 
+### Natural Language Processing_Tu Kewei
+链接：https://pan.baidu.com/s/1B7kvBOzHJuXvUtY4xB85jw?pwd=fng3 
+提取码：fng3 
+
+Offered by https://github.com/wszswppx
 ### ustc-GAMES101
 [GAMES101: 现代计算机图形学入门](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
 
