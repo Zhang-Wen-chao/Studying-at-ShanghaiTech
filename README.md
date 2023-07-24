@@ -22,16 +22,20 @@ All things I can share are in this folder of baidunetdisk.
 链接：https://pan.baidu.com/s/1tQuwV38BBNwesjuVrKMBLw?pwd=nhtq 
 提取码：nhtq 
 ### Digital Image Processing_Cai Xiran
+Offered by Zhou Kaiyue.
+
 链接：https://pan.baidu.com/s/1JnU4fPIrNYHvONsj-JjcWw?pwd=h2dy 
 提取码：h2dy 
 ### Meachine Learning_Wang Hao
 链接：https://pan.baidu.com/s/1zG5MG5LR9t9ZuuLGGYHhJg?pwd=c83z 
 提取码：c83z 
 ### Natural Language Processing_Tu Kewei
+Offered by Wu [Xiaotao](https://github.com/wszswppx).
+
 链接：https://pan.baidu.com/s/1B7kvBOzHJuXvUtY4xB85jw?pwd=fng3 
 提取码：fng3 
 
-Offered by https://github.com/wszswppx
+[飞书笔记](https://yvrg6uiafp.feishu.cn/docx/AABUdTEsPoKYaqxrGurclJ47nlc?from=from_copylink)
 ### ustc-GAMES101
 [GAMES101: 现代计算机图形学入门](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
 
