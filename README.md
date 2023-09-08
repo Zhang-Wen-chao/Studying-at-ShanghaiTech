@@ -30,6 +30,3 @@ Offered by Wu [Xiaotao](https://github.com/wszswppx).
 [GAMES101: 现代计算机图形学入门](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
 
 若对游戏感兴趣，可继续学习games 104.
-
-## 秋学期选什么课程呢
-和wangshuo商量一下
