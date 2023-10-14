@@ -28,7 +28,7 @@ Offered by Wu [Xiaotao](https://github.com/wszswppx).
 [飞书笔记](https://yvrg6uiafp.feishu.cn/docx/AABUdTEsPoKYaqxrGurclJ47nlc?from=from_copylink)
 
 ### AI for Science and Engineering_Zheng Jie
-
+刚刚开始
 ## some courses from other universities
 ### ustc-GAMES101
 [GAMES101: 现代计算机图形学入门](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
