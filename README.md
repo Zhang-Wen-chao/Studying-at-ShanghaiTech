@@ -33,4 +33,4 @@ Offered by Wu [Xiaotao](https://github.com/wszswppx).
 ### ustc-GAMES101
 [GAMES101: 现代计算机图形学入门](https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html)
 
-若对游戏感兴趣，可继续学习games 104.
+若对游戏感兴趣，可继续学习games 104
