@@ -18,7 +18,7 @@ All things I can share are in this folder of baidunetdisk.
 ### Deep Learning_Xu Lan
 
 ### Digital Image Processing_Cai Xiran
-Offered by Zhou Kaiyue.
+Offered by Zhou Kaiyue
 
 ### Meachine Learning_Wang Hao
 
